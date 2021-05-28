@@ -15,8 +15,10 @@ class ProgramController extends AbstractController
      */
     public function index(): Response
     {
-        return new Response(
-            '<html><body>Wild Series Index</body></html>'
-        );
+        return $this->render('program/index.html.twig', [
+
+            'website' => 'Wild Séries',
+     
+         ]);
     }
 }
