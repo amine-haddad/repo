@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+
+{{ dump(categoryName) }}
+{{ dump(programCategory) }}
+
+{% for programCat in programCategory %}
+<h1>Category {{ programCat.category.name }}.</h1>
+        <div class="row m-3">
+            <h2>{{ loop.index }} / {{ programCat.title }} - Catégorie : {{ programCat.category.name }}</h2>
+            
+            <p>{{ programCat.summary }}</p>
+            {# Lien vers la fiche de la série : #}
+            <a href="{{ path("program_show", { id: programCat.id }) }}">Voir la fiche</a>
+        </div>
+    {% else %}
+        Aucune série trouvée.
+    {% endfor %}
+ <a href="{{ path('category_index') }}">
+        Retour aux catégories
+    </a>  
+{% endblock %}

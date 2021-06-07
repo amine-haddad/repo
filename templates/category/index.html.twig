@@ -1,0 +1,24 @@
+
+{% extends "base.html.twig" %}
+{% block title %}Wild Séries!{% endblock %}
+{% block body %}
+    <h1>Toutes les categories de la table category : </h1>
+    {{  dump(categories) }}
+    {% for category in categories %}
+
+        <div class="row m-3">
+            {# Lien vers la fiche de la série : #}
+            <h2>{{ loop.index }} /Catégorie : <a href="{{ path("category_show", { categoryName: category.name }) }}">{{ category.name }}</a></h2>
+            <div class="container-fluid ">
+            
+            </div>
+           
+            
+        </div>
+    {% else %}
+        Aucune categories trouvée.
+    {% endfor %}
+    <a href="{{ path('app_index') }}">
+        Retour à l'accueil
+    </a>   
+{% endblock %}
