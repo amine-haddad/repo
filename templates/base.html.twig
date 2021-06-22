@@ -12,9 +12,6 @@
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
-		{% block javascripts %}
-			{{ encore_entry_script_tags('app') }}
-		{% endblock %}
 	</head>
 	<header>
 		{% include "_navbar.html.twig" %}
@@ -22,5 +19,11 @@
 	<body>
 
 		{% block body %}{% endblock %}
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+			<script async defer data-website-id="4fb7fa4c-5b46-438d-94b3-3a8fb9bc2e8b" 
+			src="http://your-umami-app.com/umami.js"></script>
+			<script async defer data-website-id="5d6fbdfc-d830-41b6-85ca-188bf85f0dde" src="http://localhost:3000/umami.js"></script>
+		{% endblock %}
 	</body>
 </html>
